@@ -301,6 +301,24 @@ background: #2ca87f !important;
                             </select>
 
                             </div>
+
+                              <div class="mb-3">
+                              <label class="form-label" for="locatairesec" >Locataire</label>
+                          
+                          <!--<select class="form-select" name="denomination" id="denomination" style='margin-top:10px;' required>
+                                <option value="">Sélectionner Denomination Maison</option>
+                              @if(isset($denominationmaison) && $denominationmaison->count() > 0)
+                                @foreach($denominationmaison as $type)
+                                    <option value="{{ $type->id }}">{{ ucwords(strtolower($type->denomination)) }}</option>
+                                @endforeach
+                              @endif
+                            </select>-->
+                            <select class="form-select" name="locatairesec" id="locatairesec" style='margin-top:10px;' required>
+                               
+                              
+                            </select>
+
+                            </div>
    <div class="mb-3">
                             <label for="detenteur" class="form-label">Numero Appartement</label>
                            <div style="display:flex;">  

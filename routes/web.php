@@ -229,6 +229,8 @@ Route::get('/getoptionsnumappart/{idenomin}/{id}', [AffichernumappartementContro
 
 Route::get('/getoptionstravaux/{id}', [AfficherinfostravauxController::class, 'getOptions']);
 
+Route::get('/getoptionslocatairenumappart/{id}', [AfficherinfostravauxController::class,'getOptionslocatnumappart']);
+
 Route::get('/getLocataire/{id}/{id2}', [AfficherlocataireController::class, 'getOptions']);
 
 Route::get('/getdetails/{id1}/{id2}', [DetailsAppartController::class, 'getdetails']);

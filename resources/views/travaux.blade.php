@@ -843,6 +843,7 @@ $.each(response, function(key, value) {
 
 
 $('#numappartement').empty().append('<option value="">Sélectionner Numero Appartement</option>');
+$("#locatairesec").empty().append('<option value="">Sélectionner Locataire</option>');
 
 
             if(id!=""){
@@ -861,10 +862,85 @@ $('#numappartement').empty().append('<option value="">Sélectionner Numero Appar
 
                        $("#numappartdisa").val(response);*/
 
-
+/*
 $.each(response, function(key, value) {
                         $('#numappartement').append('<option value="'+ value.numappartement +'">Numero_'+ value.numappartement +'</option>');
-                    });
+                    });*/
+
+                    // Vider le select avant d'ajouter
+     
+
+        $.each(response.appartements, function (key, value) {
+            $('#numappartement').append(
+                '<option value="'+ value.numappartement +'">Numero_' + value.numappartement + '</option>'
+            );
+        });
+
+        $.each(response.locataires, function (key, value) {
+    $('#locatairesec').append(
+        '<option value="'+ value.id +'">'+ value.nom+" "+value.prenom +'</option>'
+    );
+});
+
+
+
+                    },
+                     error: function(error) {
+                    console.log(error);
+
+                    //alert(error);
+
+                  }
+                });
+            } else {
+               // $('#email').val('');
+            }
+          }
+          else{
+            alert();
+          }
+        });
+
+
+         $('#locatairesec').change(function () {
+            var id = $(this).val();
+
+
+$('#numappartement').empty().append('<option value="">Sélectionner Numero Appartement</option>');
+
+
+
+            if(id!=""){
+           //   alert(id);
+            if (id) {
+                $.ajax({
+                    url: '/getoptionslocatairenumappart/' + id,
+                    type: 'GET',
+                    success: function (response) {
+                     //   $('#email').val(response.email);
+
+                      //alert(response);
+                       console.log(response);
+
+                     /*  $("#numappart").val(response);
+
+                       $("#numappartdisa").val(response);*/
+
+/*
+$.each(response, function(key, value) {
+                        $('#numappartement').append('<option value="'+ value.numappartement +'">Numero_'+ value.numappartement +'</option>');
+                    });*/
+
+                    // Vider le select avant d'ajouter
+     
+
+        $.each(response.appartements, function (key, value) {
+            $('#numappartement').append(
+                '<option value="'+ value.numappartement +'">Numero_' + value.numappartement + '</option>'
+            );
+        });
+
+
 
 
                     },

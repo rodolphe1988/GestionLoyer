@@ -1442,7 +1442,13 @@ $('#filter-detenteur').on('change', function () {
 /*var lastDateStrvers=document.querySelector("#filter-datetop10").value;
   //alert(this.value);
   loadChartSecond(this.value,lastDateStrvers);*/
+  lastDateStrvers=document.querySelector("#filter-datetop10").value;
+
+alert(lastDateStrvers);
   loadChart(this.value);
+
+  //loadChartSecond(this.value,lastDateStrvers);
+
 });
 
 
